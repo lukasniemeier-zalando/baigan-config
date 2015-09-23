@@ -2,13 +2,21 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.zalando</groupId>
+    <groupId>org.zalando</groupId>
     <artifactId>baigan-config</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>baigan-config</name>
-    <url>http://maven.apache.org</url>
+    <url>https://github.com/zalando/baigan-config</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -46,6 +54,22 @@
                     <configuration>
                         <source>1.8</source>
                         <target>1.8</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>com.mycila</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <configuration>
+                        <header>APACHE-2.txt</header>
+                        <properties>
+                            <owner>Zalando SE</owner>
+                            <email>team-coast@zalando.de</email>
+                        </properties>
+                        <excludes>
+                            <exclude>LICENSE</exclude>
+                            <exclude>README.md</exclude>
+                            <exclude>MAINTAINERS</exclude>
+                        </excludes>
                     </configuration>
                 </plugin>
             </plugins>
