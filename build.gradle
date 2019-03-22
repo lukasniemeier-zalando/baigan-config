@@ -1,5 +1,6 @@
 plugins {
     id 'io.codearte.nexus-staging' version '0.20.0'
+    
 }
 
 def baiganVersion = file("version").text.trim()
@@ -16,6 +17,7 @@ ext.versions = [
 
 subprojects {
     apply plugin: 'java-library'
+    apply plugin: 'idea'
 
     group = 'org.zalando.baigan'
     version = baiganVersion
